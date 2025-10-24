@@ -9,7 +9,7 @@ public class AppointmentBook {
     public int findFreeBlock(int period, int duration) {
         int block = 0;
         for(int i = 0; i < 60; i++) {
-            if(isMinuteFree(period, 1)) {
+            if(isMinuteFree(period, i)) {
                 block++;
                 if(block == duration) {
                     return i - duration + 1;
