@@ -22,7 +22,7 @@ public class AppointmentBook {
         for(int i = startPeriod; i <= endPeriod; i++) {
             int freeBlock = findFreeBlock(i, duration);
             if (freeBlock > -1){
-                reserveBlock(i, freeBlock, duration);
+                reserveBlock(freeBlock, duration, startPeriod);
                 return true;
             }
         }
@@ -32,10 +32,9 @@ public class AppointmentBook {
         for(int i = 0; i < schedule[period - 1].length; i++)
             System.out.println(i + " " + schedule[period - 1][i]);
     }
-    public boolean reserveBlock(int startMinute, int duration, int period) {
+    public void reserveBlock(int startMinute, int duration, int period) {
         for(int i = startMinute; i < startMinute + duration; i++) {
             schedule[period - 1][i] = false;
         }
-        return false;
     }
 }
