@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class AppointmentBook {
     private boolean[][] schedule;
     public AppointmentBook(boolean[][] schedule) {
